@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class TimerDisPlay : MonoBehaviour
@@ -23,18 +22,26 @@ public class TimerDisPlay : MonoBehaviour
             Recover.SetActive(false);
         }
     }
-    public async void ReloadDisplay()
+    public void ReloadDisplay()
+    {
+        StartCoroutine("ReloadDisplayMain");
+    }
+    private IEnumerator ReloadDisplayMain()
     {
         Reload.SetActive(true);
         ReloadTimer.ReloadCount();
-        await Task.Delay(3000);
+        yield return new WaitForSeconds(3);
         Reload.SetActive(false);
     }
-    public async void RecoverDisplay()
+    public void RecoverDisplay()
+    {
+        StartCoroutine("RecoverDisplayMain");
+    }
+    private IEnumerator RecoverDisplayMain()
     {
         Recover.SetActive(true);
         RecoverTimer.RecoverCount();
-        await Task.Delay(4300);
+        yield return new WaitForSeconds(4.3f);
         Recover.SetActive(false);
     }
 }

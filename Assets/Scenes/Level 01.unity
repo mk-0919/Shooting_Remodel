@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 256
@@ -6498,75 +6498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1001 &724175366
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1827267081285481006, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_Name
-      value: First_Aid_Kit
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.70690465
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.01690586
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.01690586
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.70690465
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 362.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1827267081285840398, guid: ea5e177335ffa7b4faea97b4a78c8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ea5e177335ffa7b4faea97b4a78c8353, type: 3}
 --- !u!1 &769433251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100078, guid: f1d84cc28597f5641a3d9cbc4df7e306,
@@ -6737,6 +6668,7 @@ MonoBehaviour:
   HealthSlider: {fileID: 187726645}
   damageImage: {fileID: 92955146}
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
+  SuperVisionAmmo: {fileID: 1810840106}
   SuperVisionRecover: {fileID: 1802341037}
   flashSpeed: 5
   flashColor: {r: 1, g: 0, b: 0, a: 0.1}

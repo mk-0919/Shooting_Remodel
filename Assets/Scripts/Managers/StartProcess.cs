@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StartProcess : MonoBehaviour
 {
-    public static bool processPermit = false;
+    public static bool processPermit;
     public Text text;
     public Image Image;
     public AudioSource Audio;
@@ -19,6 +19,7 @@ public class StartProcess : MonoBehaviour
         g = Image.color.g;
         b = Image.color.b;
         a = Image.color.a;
+        processPermit = false;
     }
     private void Start()
     {

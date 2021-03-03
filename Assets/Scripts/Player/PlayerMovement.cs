@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
             Animating(h, v);
         }
         Turning();
+
     }
     void Move(float h, float v)
     {
