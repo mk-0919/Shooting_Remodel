@@ -3,7 +3,8 @@ using System.Threading.Tasks;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6f;
+    public float Speed = 6f;
+    float speed, slowspeed;
     Vector3 movement;
     Animator anim;
     Rigidbody playerRigidbody;
@@ -19,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
         MyPlayerHealth = GetComponent<MyPlayerHealth>();
+        speed = Speed;
+        slowspeed = Speed / 2;
     }
     void FixedUpdate()
     {
@@ -31,6 +34,14 @@ public class PlayerMovement : MonoBehaviour
             Animating(h, v);
         }
         Turning();
+        if(SuperVisionAmmo.isReloading || SuperVisionRecover.isRecover)
+        {
+            speed = slowspeed;
+        }
+        else
+        {
+            speed = Speed;
+        }
 
     }
     void Move(float h, float v)
