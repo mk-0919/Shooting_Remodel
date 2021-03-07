@@ -8,7 +8,7 @@ public class MyEnemyManager : MonoBehaviour
     public GameObject enemy;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
-    // Start is called before the first frame update
+
     void Start()
     {
         spawnTime += 3;
