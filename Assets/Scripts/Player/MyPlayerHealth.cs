@@ -87,7 +87,7 @@ public class MyPlayerHealth : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void Recover(int val)
