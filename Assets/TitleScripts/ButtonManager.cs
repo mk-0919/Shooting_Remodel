@@ -11,6 +11,7 @@ public class ButtonManager : MonoBehaviour
     AudioSource Click;
     float fadeSpeed = 0.02f;
     float r, g, b, a;
+    public Button first, wave, score;
 
     private void Awake()
     {
@@ -20,14 +21,27 @@ public class ButtonManager : MonoBehaviour
         a = Image.color.a;
         Click = GetComponent<AudioSource>();
     }
-    public void GameStart()
+    public void firstClick()
     {
         Click.Play();
-        StartCoroutine("SceneChenge");
+        first.gameObject.SetActive(false);
+        wave.gameObject.SetActive(true);
+        score.gameObject.SetActive(true);
     }
-    private IEnumerator SceneChenge()
+    public void WaveStart()
+    {
+        Click.Play();
+        Debug.Log("StartWaveMode");
+    }
+    public void ScoreStart()
+    {
+        Click.Play();
+        StartCoroutine(SceneChenge(0));
+    }
+    private IEnumerator SceneChenge(int num)
     {
         Image.enabled = true;
+        ButtonHide();
         while (a < 1)
         {
             a += fadeSpeed;
@@ -36,6 +50,12 @@ public class ButtonManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         Rend.Release();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(num);
+    }
+    private void ButtonHide()
+    {
+        first.gameObject.SetActive(false);
+        wave.gameObject.SetActive(false);
+        score.gameObject.SetActive(false);
     }
 }
