@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour
             speed = Speed;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && StartProcess.processPermit)
+        if (Input.GetKey(KeyCode.LeftShift) && StartProcess.processPermit && dashVal > 0)
         {
-            if (isStaDown == false)
+            if (isStaDown == false && SuperVisionAmmo.isReloading == false && SuperVisionRecover.isRecover == false)
             {
                 Speed = 12;
                 StopCoroutine("staminaUp");
