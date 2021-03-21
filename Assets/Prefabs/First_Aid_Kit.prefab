@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  deleteTime: 5
+  deleteTime: 10
 --- !u!111 &6941268366012976466
 Animation:
   m_ObjectHideFlags: 0

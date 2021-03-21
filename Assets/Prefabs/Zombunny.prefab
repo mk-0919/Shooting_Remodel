@@ -252,7 +252,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
   item1: {fileID: 4862014389953086911, guid: 69d33c683fe6eb44ab149282ad8acd3f, type: 3}
   item2: {fileID: 8461543450665168339, guid: ea5e177335ffa7b4faea97b4a78c8353, type: 3}
-  dropRate: 1
+  dropRate: 0.3
 --- !u!114 &2859533259124389858
 MonoBehaviour:
   m_ObjectHideFlags: 0
