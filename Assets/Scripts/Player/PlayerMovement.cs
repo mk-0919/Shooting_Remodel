@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Threading.Tasks;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 6f;
-    float speed, slowspeed;
+    float speed, slowspeed, dashVal=30f;
     Vector3 movement;
     Animator anim;
     Rigidbody playerRigidbody;
@@ -13,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     float camRayLength = 100f;
     public SuperVisionAmmo SuperVisionAmmo;
     public SuperVisionRecover SuperVisionRecover;
+    bool isDash = false;
+    public Slider staminaSlider;
+    static float dashCount = 3;
+    bool isStaDown = false, isStaUp = true;
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
@@ -22,11 +28,14 @@ public class PlayerMovement : MonoBehaviour
         MyPlayerHealth = GetComponent<MyPlayerHealth>();
         speed = Speed;
         slowspeed = Speed / 2;
+        staminaSlider.value = dashVal;
     }
     void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+
+        staminaSlider.value = dashVal;
 
         if (StartProcess.processPermit)
         {
@@ -43,6 +52,29 @@ public class PlayerMovement : MonoBehaviour
             speed = Speed;
         }
 
+        if (Input.GetKey(KeyCode.LeftShift) && StartProcess.processPermit)
+        {
+            if (isStaDown == false)
+            {
+                Speed = 12;
+                StopCoroutine("staminaUp");
+                isStaUp = false;
+                StartCoroutine("staminaDown");
+                isStaDown = true;
+            }
+        }
+        else if(StartProcess.processPermit)
+        {
+            Speed = 6;
+            StopCoroutine("staminaDown");
+            isStaDown = false;
+            if (dashVal < 30 && isStaUp == false)
+            {
+                dashCount = 3;
+                StartCoroutine("staminaUp");
+                isStaUp = true;
+            }
+        }
     }
     void Move(float h, float v)
     {
@@ -90,6 +122,31 @@ public class PlayerMovement : MonoBehaviour
         if (col.tag == "Item")
         {
             getItem(col);
+        }
+    }
+    private IEnumerator staminaDown()
+    {
+        while (dashVal > 0)
+        {
+            dashVal -= 0.25f;
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+    private IEnumerator staminaUp()
+    {
+        while (dashCount > 0)
+        {
+            dashCount -= 0.1f;
+            Debug.Log(dashCount);
+            yield return new WaitForSeconds(0.1f);
+        }
+        if(dashCount <= 0)
+        {
+            while (dashVal <= 30)
+            {
+                dashVal += 0.2f;
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 }
