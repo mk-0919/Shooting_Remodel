@@ -8,7 +8,7 @@ public class ButtonManager : MonoBehaviour
 {
     public Image Image;
     [SerializeField] private RenderTexture Rend;
-    AudioSource Click;
+    public AudioSource Click,OnButton;
     float fadeSpeed = 0.02f;
     float r, g, b, a;
     public Button first, wave, score;
@@ -19,7 +19,6 @@ public class ButtonManager : MonoBehaviour
         g = Image.color.g;
         b = Image.color.b;
         a = Image.color.a;
-        Click = GetComponent<AudioSource>();
     }
     public void firstClick()
     {
@@ -27,6 +26,10 @@ public class ButtonManager : MonoBehaviour
         first.gameObject.SetActive(false);
         wave.gameObject.SetActive(true);
         score.gameObject.SetActive(true);
+    }
+    public void PointerEnter()
+    {
+        OnButton.Play();
     }
     public void WaveStart()
     {
