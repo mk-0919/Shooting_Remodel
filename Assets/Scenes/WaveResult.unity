@@ -1160,7 +1160,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2060122117}
-        m_MethodName: ClickContinue
+        m_MethodName: ClickContinueWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 948080011}
   - component: {fileID: 948080010}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score :'
+  m_Text: 'Wave :'
 --- !u!222 &948080012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 1007991366}
   - component: {fileID: 1007991367}
   m_Layer: 0
-  m_Name: ScoreManager
+  m_Name: WaveNumManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007991365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717aeff91084a0c48a83d248fe558440, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dcaa2e8a7dbd0c468735f2270838548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 948080011}
@@ -1825,7 +1825,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2060122117}
-        m_MethodName: ClickReturn
+        m_MethodName: ClickReturnWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2108,7 +2108,7 @@ GameObject:
   - component: {fileID: 1843328177}
   - component: {fileID: 1843328176}
   m_Layer: 5
-  m_Name: HighScore
+  m_Name: HighWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2181,7 +2181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HighScore :'
+  m_Text: 'HighWave :'
 --- !u!222 &1843328178
 CanvasRenderer:
   m_ObjectHideFlags: 0

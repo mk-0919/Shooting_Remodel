@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MyEnemyHealth : MonoBehaviour
 {
@@ -72,7 +73,8 @@ public class MyEnemyHealth : MonoBehaviour
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
-        MyScoreManager.score += scoreValue;
+        if (SceneManager.GetActiveScene().buildIndex == 0) MyScoreManager.score += scoreValue;
+        if (SceneManager.GetActiveScene().buildIndex == 3) WaveEnemyManager.killCount++;
         Destroy(gameObject, 2f);
     }
 

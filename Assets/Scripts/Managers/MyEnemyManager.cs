@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MyEnemyManager : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class MyEnemyManager : MonoBehaviour
     public GameObject enemy;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
+    public int SpawnNum = 0;
 
-    void Start()
+    void Awake()
     {
         spawnTime += 3;
         InvokeRepeating("Spawn", spawnTime, spawnTime);
@@ -23,7 +25,16 @@ public class MyEnemyManager : MonoBehaviour
             return;
         }
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-
+        
         Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        SpawnNum++;
+    }
+    public void StopSpawn()
+    {
+        CancelInvoke();
+    }
+    public void RestartSpawn()
+    {
+        InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 }

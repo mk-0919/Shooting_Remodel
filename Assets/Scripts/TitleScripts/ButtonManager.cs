@@ -34,7 +34,7 @@ public class ButtonManager : MonoBehaviour
     public void WaveStart()
     {
         Click.Play();
-        Debug.Log("StartWaveMode");
+        StartCoroutine(SceneChenge(3));
     }
     public void ScoreStart()
     {

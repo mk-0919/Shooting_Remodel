@@ -20,11 +20,27 @@ public class resultButtonFunctions : MonoBehaviour
     public void ClickContinue()
     {
         Click.Play();
+        MyScoreManager.score = 0;
         StartCoroutine(SceneChenge(0));
     }
     public void ClickReturn()
     {
         Click.Play();
+        MyScoreManager.score = 0;
+        StartCoroutine(SceneChenge(1));
+    }
+    public void ClickContinueWave()
+    {
+        Click.Play();
+        WaveNumManager.WaveNum = 0;
+        WaveEnemyManager.killCount = 0;
+        StartCoroutine(SceneChenge(3));
+    }
+    public void ClickReturnWave()
+    {
+        Click.Play();
+        WaveNumManager.WaveNum = 0;
+        WaveEnemyManager.killCount = 0;
         StartCoroutine(SceneChenge(1));
     }
     public void PointerEnter()

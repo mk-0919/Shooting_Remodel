@@ -137,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
         while (dashCount > 0)
         {
             dashCount -= 0.1f;
-            Debug.Log(dashCount);
             yield return new WaitForSeconds(0.1f);
         }
         if(dashCount <= 0)
