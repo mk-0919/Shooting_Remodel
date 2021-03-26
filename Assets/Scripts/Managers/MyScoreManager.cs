@@ -14,7 +14,7 @@ public class MyScoreManager : MonoBehaviour
     public static int save, save1, save2, highscore;
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             save = 0;
         }
@@ -32,7 +32,7 @@ public class MyScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             text.text = "Score: " + score;
             save = score;

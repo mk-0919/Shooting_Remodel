@@ -39,7 +39,7 @@ public class ButtonManager : MonoBehaviour
     public void ScoreStart()
     {
         Click.Play();
-        StartCoroutine(SceneChenge(0));
+        StartCoroutine(SceneChenge(1));
     }
     private IEnumerator SceneChenge(int num)
     {

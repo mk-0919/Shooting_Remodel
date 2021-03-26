@@ -87,7 +87,7 @@ public class MyPlayerHealth : MonoBehaviour
 
     public void RestartLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene(2);
         }

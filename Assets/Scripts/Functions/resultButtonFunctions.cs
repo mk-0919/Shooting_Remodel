@@ -21,13 +21,13 @@ public class resultButtonFunctions : MonoBehaviour
     {
         Click.Play();
         MyScoreManager.score = 0;
-        StartCoroutine(SceneChenge(0));
+        StartCoroutine(SceneChenge(1));
     }
     public void ClickReturn()
     {
         Click.Play();
         MyScoreManager.score = 0;
-        StartCoroutine(SceneChenge(1));
+        StartCoroutine(SceneChenge(0));
     }
     public void ClickContinueWave()
     {
@@ -41,7 +41,7 @@ public class resultButtonFunctions : MonoBehaviour
         Click.Play();
         WaveNumManager.WaveNum = 0;
         WaveEnemyManager.killCount = 0;
-        StartCoroutine(SceneChenge(1));
+        StartCoroutine(SceneChenge(0));
     }
     public void PointerEnter()
     {
