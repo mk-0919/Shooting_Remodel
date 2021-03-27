@@ -73,7 +73,7 @@ public class MyEnemyHealth : MonoBehaviour
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
-        if (SceneManager.GetActiveScene().buildIndex == 0) MyScoreManager.score += scoreValue;
+        if (SceneManager.GetActiveScene().buildIndex == 1) MyScoreManager.score += scoreValue;
         if (SceneManager.GetActiveScene().buildIndex == 3) WaveEnemyManager.killCount++;
         Destroy(gameObject, 2f);
     }
