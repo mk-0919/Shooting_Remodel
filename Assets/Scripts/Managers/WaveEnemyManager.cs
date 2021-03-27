@@ -20,6 +20,8 @@ public class WaveEnemyManager : MonoBehaviour
     float r, g, b, a;
     public AudioSource AudioSource;
     public difficulty difficulty;
+    public SuperVisionAmmo SuperVisionAmmo;
+    public SuperVisionRecover SuperVisionRecover;
 
     private void Awake()
     {
@@ -67,6 +69,7 @@ public class WaveEnemyManager : MonoBehaviour
         NowEnemyNum = WaveNumManager.WaveNum * 6 + 10;
         WaveNumManager.WaveNum++;
         StartCoroutine("CountUpText");
+        WaveBonus();
         foreach (MyEnemyManager x in myEnemyManagers)
         {
             x.SpawnNum = 0;
@@ -92,5 +95,16 @@ public class WaveEnemyManager : MonoBehaviour
             yield return new WaitForSeconds(Num);
         }
         Text.enabled = false;
+    }
+    private void WaveBonus()
+    {
+        if (WaveNumManager.WaveNum % 3 == 0)
+        {
+            SuperVisionRecover.GetRecover();
+        }
+        else
+        {
+            SuperVisionAmmo.AddAmmo();
+        }
     }
 }
