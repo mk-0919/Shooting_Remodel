@@ -9566,6 +9566,8 @@ MonoBehaviour:
   Text: {fileID: 143421931}
   AudioSource: {fileID: 143421934}
   difficulty: 1
+  SuperVisionAmmo: {fileID: 1810840106}
+  SuperVisionRecover: {fileID: 1802341037}
 --- !u!4 &2108450048
 Transform:
   m_ObjectHideFlags: 0
